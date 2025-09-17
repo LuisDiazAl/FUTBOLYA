@@ -85,7 +85,7 @@ const Register = () => {
                 className="toggle-password"
                 onClick={() => setMostrarPassword(!mostrarPassword)}
               >
-                {mostrarPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {mostrarPassword ? <EyeOff size={15} /> : <Eye size={15} />}
               </button>
             </div>
             <div className="password-hint">

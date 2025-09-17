@@ -1,19 +1,24 @@
-// src/api/auth.js
-import axios from 'axios';
+﻿import axios from "axios";
+import { API_BASE_URL } from "./config";
 
-const API_URL = 'https://localhost:7055/api'; // Tu API de Visual Studio
+const client = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 
-export const login = async (email, password) => {
-  return axios.post(`${API_URL}/auth/login`, {
+export const login = (email, password) => {
+  return client.post("/auth/login", {
     correo: email,
-    contraseña: password
+    contrasena: password,
   });
 };
 
-export const register = async (nombre, email, password) => {
-  return axios.post(`${API_URL}/auth/registro`, { 
-    nombre: nombre,
+export const register = (nombre, email, password) => {
+  return client.post("/auth/registro", {
+    nombre,
     correo: email,
-    contraseña: password
+    contrasena: password,
   });
 };

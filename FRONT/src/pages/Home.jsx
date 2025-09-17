@@ -22,6 +22,7 @@ import {
   Target
 } from 'lucide-react';
 import '../assets/styles/home.css';
+import { buildApiUrl } from '../api/config';
 
 const Home = () => {
   const [reservas, setReservas] = useState([]);
@@ -43,7 +44,7 @@ const Home = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('https://localhost:7055/api/reservas/disponibles', {
+        const res = await fetch(buildApiUrl('/reservas/disponibles'), {
           headers: { Authorization: `Bearer ${token}` }
         });
         const data = await res.json();

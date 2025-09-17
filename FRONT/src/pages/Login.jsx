@@ -44,7 +44,7 @@ const Login = () => {
             <span className="logo-text">FutbolYa</span>
           </div>
           <h1 className="auth-title">Iniciar Sesión</h1>
-          <p className="auth-subtitle">Bienvenido de vuelta a la cancha digital</p>
+          <p className="auth-subtitle">Bienvenido a FutbolYA tu cancha digital</p>
         </div>
 
         {/* Form */}
